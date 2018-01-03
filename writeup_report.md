@@ -15,10 +15,10 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./images/undist.png "Undistorted"
-[image2]: ./test_images/straight_lines1.jpg "Road Transformed"
+[image2]: ./images/lane-orig-undist.png "Road Transformed"
 [image3]: ./images/threshold.png "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
+[image5]: examples/color_fit_lines.jpg "Fit Visual" 
 [image6]: ./images/lane-detected.png "Output"
 [video1]: ./project_video.mp4 "Video"
 
@@ -114,7 +114,7 @@ def measure_curvature(ploty, left_fitx, right_fitx):
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I implemented this step in lines # through # in my code in `yet_another_file.py` in the function `map_lane()`.  Here is an example of my result on a test image:
+I implemented this step at 20th code cell in adv-lane-finding.ipynb. Here is an example of my result on a test image:
 
 ![alt text][image6]
 
@@ -126,7 +126,7 @@ I implemented this step in lines # through # in my code in `yet_another_file.py`
 
 Here's a [link to my video result](./project_video_result.mp4)
 
-[![Alt text for your video](https://img.youtube.com/vi/FILBmI10ICU/0.jpg)](https://youtu.be/FILBmI10ICU)
+[![Alt text for your video](https://img.youtube.com/vi/gKINBESwU6s/0.jpg)](https://youtu.be/gKINBESwU6s)
 
 
 ---
@@ -141,3 +141,5 @@ The initial model to find lanes has false positives. The way I fix is
 2) to ensure that the curvature of the current frame is not too much different from the previous frame's
 
 The code for this is found in _fill_lane()_ function.
+
+In addition, the filtering method is not reflecting situation such as nights, raining, snow fall and so on. So, the filter or classifier might not make a good predition in these situations. To overcome this, I might need training data gathered from those situations and even use a robust classifier such as YOLO which is based on deep learning technology.
